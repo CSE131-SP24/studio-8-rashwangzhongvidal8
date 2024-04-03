@@ -27,6 +27,15 @@ public class Quiz {
 	
 	public void takeQuiz() {
 		//FIXME
+		int sum = 0;
+		for(Question a: questions) {
+			a.displayPrompt();
+			a.checkAnswer(getUserAnswer());
+			System.out.println("you earned " + a.checkAnswer(getUserAnswer()) + " points for this question");
+			sum+= a.checkAnswer(getUserAnswer());
+		}
+		System.out.println("total earned points: " + sum);
+		System.out.println("total possible points: " + getTotalPoints()); //need to fix this to reflect 
 	}
 	
 	public static void main(String[] args) {
